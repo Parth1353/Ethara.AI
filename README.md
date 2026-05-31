@@ -148,23 +148,6 @@ curl -fsS http://127.0.0.1:8000/health
 docker compose --env-file .env.example down
 ```
 
-## Deployment
 
-Recommended free deployment path:
 
-- PostgreSQL: Neon
-- Backend: Render
-- Frontend: Vercel
-- Frontend fallback: Netlify
-- Backend image registry: Docker Hub
 
-See `DEPLOYMENT.md` for exact deployment steps and required environment variables.
-
-## Submission Checklist
-
-- GitHub repository URL
-- Docker Hub backend image URL
-- Live frontend deployment URL
-- Live backend API URL
-
-Fill `SUBMISSION.md` after deployment.
