@@ -202,7 +202,7 @@ function Dashboard() {
                 <BarChart data={topProductsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }} layout="vertical">
                   <CartesianGrid strokeDasharray="3 3" stroke="var(--border-glass)" horizontal={true} vertical={false} />
                   <XAxis type="number" stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
-                  <YAxis dataKey="name" type="category" width={100} stroke="var(--text-secondary)" fontSize={11} tickLine={false} axisLine={false} />
+                  <YAxis dataKey="name" type="category" width={115} stroke="var(--text-secondary)" fontSize={11} tickLine={false} axisLine={false} tickFormatter={(value) => value.length > 18 ? value.substring(0, 16) + '...' : value} />
                   <Tooltip content={<CurrencyTooltip />} />
                   <Bar dataKey="sales" fill="var(--accent-purple)" radius={[0, 4, 4, 0]} />
                 </BarChart>
