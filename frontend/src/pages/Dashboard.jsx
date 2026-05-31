@@ -176,8 +176,8 @@ function Dashboard() {
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="var(--border-glass)" vertical={false} />
-                  <XAxis dataKey="name" stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} />
-                  <YAxis stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
+                  <XAxis dataKey="name" stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} />
+                  <YAxis stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
                   <Tooltip content={<CurrencyTooltip />} />
                   <Area type="monotone" dataKey="amount" stroke="var(--accent-blue)" strokeWidth={3} fillOpacity={1} fill="url(#colorAmount)" />
                 </AreaChart>
@@ -201,8 +201,8 @@ function Dashboard() {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={topProductsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }} layout="vertical">
                   <CartesianGrid strokeDasharray="3 3" stroke="var(--border-glass)" horizontal={true} vertical={false} />
-                  <XAxis type="number" stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
-                  <YAxis dataKey="name" type="category" width={100} stroke="var(--text-muted)" fontSize={11} tickLine={false} axisLine={false} />
+                  <XAxis type="number" stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
+                  <YAxis dataKey="name" type="category" width={100} stroke="var(--text-secondary)" fontSize={11} tickLine={false} axisLine={false} />
                   <Tooltip content={<CurrencyTooltip />} />
                   <Bar dataKey="sales" fill="var(--accent-purple)" radius={[0, 4, 4, 0]} />
                 </BarChart>
