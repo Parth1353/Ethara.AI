@@ -1391,3 +1391,49 @@ html[data-theme="light"] .falling-item {
   filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.25));
 }
 
+/* Chart Styles */
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+.chart-container {
+  height: 260px;
+  padding: 1rem 0;
+  width: 100%;
+}
+.col-span-full .chart-container {
+  height: 300px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+/* Custom Recharts Tooltip */
+.chart-tooltip {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.75rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-tooltip-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.chart-tooltip-value {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
