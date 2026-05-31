@@ -194,6 +194,12 @@ th {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 td {
@@ -752,7 +758,9 @@ label span {
 
 .table-wrap {
   width: 100%;
+  max-height: calc(100vh - 280px);
   overflow-x: auto;
+  overflow-y: auto;
 }
 
 /* Custom Scrollbar for elegant feel */
