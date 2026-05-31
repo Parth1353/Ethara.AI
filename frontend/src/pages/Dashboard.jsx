@@ -103,6 +103,58 @@ function Dashboard() {
         <SummaryCard icon={TrendingDown} label="Low stock products" value={lowStockProducts.length} tone="amber" />
       </div>
 
+      <div className="content-grid">
+        <section className="panel">
+          <div className="panel-heading">
+            <div>
+              <h2>Low stock products</h2>
+              <p>Products at or below 5 units</p>
+            </div>
+          </div>
+
+          {lowStockProducts.length > 0 ? (
+            <div className="stock-list">
+              {lowStockProducts.map((product) => (
+                <article className="stock-row" key={product.id}>
+                  <div>
+                    <strong>{product.name}</strong>
+                    <span>{product.sku}</span>
+                  </div>
+                  <span className="stock-pill warning">{product.quantity_in_stock} left</span>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <EmptyState icon={AlertTriangle} title="Stock levels are healthy" message="No products are currently below the low-stock threshold." />
+          )}
+        </section>
+
+        <section className="panel">
+          <div className="panel-heading">
+            <div>
+              <h2>Recent orders</h2>
+              <p>{formatCurrency(revenue)} recorded revenue</p>
+            </div>
+          </div>
+
+          {orders.length > 0 ? (
+            <div className="order-mini-list">
+              {orders.slice(0, 5).map((order) => (
+                <article className="order-mini-row" key={order.id}>
+                  <div>
+                    <strong>{order.customer.full_name}</strong>
+                    <span>{order.items.length} item lines</span>
+                  </div>
+                  <strong>{formatCurrency(order.total_amount)}</strong>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <EmptyState icon={ShoppingCart} title="No orders yet" message="Created orders will appear here with calculated totals." />
+          )}
+        </section>
+      </div>
+
       {/* Analytics Charts Grid */}
       <div className="content-grid">
         {/* Revenue Area Chart */}
@@ -194,58 +246,6 @@ function Dashboard() {
               <EmptyState icon={PieChartIcon} title="No inventory" message="Add products to see stock distribution." />
             )}
           </div>
-        </section>
-      </div>
-
-      <div className="content-grid">
-        <section className="panel">
-          <div className="panel-heading">
-            <div>
-              <h2>Low stock products</h2>
-              <p>Products at or below 5 units</p>
-            </div>
-          </div>
-
-          {lowStockProducts.length > 0 ? (
-            <div className="stock-list">
-              {lowStockProducts.map((product) => (
-                <article className="stock-row" key={product.id}>
-                  <div>
-                    <strong>{product.name}</strong>
-                    <span>{product.sku}</span>
-                  </div>
-                  <span className="stock-pill warning">{product.quantity_in_stock} left</span>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <EmptyState icon={AlertTriangle} title="Stock levels are healthy" message="No products are currently below the low-stock threshold." />
-          )}
-        </section>
-
-        <section className="panel">
-          <div className="panel-heading">
-            <div>
-              <h2>Recent orders</h2>
-              <p>{formatCurrency(revenue)} recorded revenue</p>
-            </div>
-          </div>
-
-          {orders.length > 0 ? (
-            <div className="order-mini-list">
-              {orders.slice(0, 5).map((order) => (
-                <article className="order-mini-row" key={order.id}>
-                  <div>
-                    <strong>{order.customer.full_name}</strong>
-                    <span>{order.items.length} item lines</span>
-                  </div>
-                  <strong>{formatCurrency(order.total_amount)}</strong>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <EmptyState icon={ShoppingCart} title="No orders yet" message="Created orders will appear here with calculated totals." />
-          )}
         </section>
       </div>
     </section>
