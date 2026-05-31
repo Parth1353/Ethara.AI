@@ -1,6 +1,7 @@
 import { ArrowLeft, ShoppingCart, Trash2 } from 'lucide-react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import CartLoader from '../components/CartLoader.jsx'
 import EmptyState from '../components/EmptyState.jsx'
 import StatusMessage from '../components/StatusMessage.jsx'
 import { getErrorMessage } from '../api/errors.js'
@@ -38,7 +39,7 @@ function OrderDetails() {
   if (orderQuery.isLoading) {
     return (
       <section className="page-stack">
-        <div className="panel loading-panel">Loading order...</div>
+        <CartLoader text="Loading order..." />
       </section>
     )
   }

@@ -1012,11 +1012,35 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 .loading-panel {
-  display: grid;
-  place-items: center;
-  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: 260px;
   color: var(--text-secondary);
   font-weight: 600;
+  position: relative;
+}
+
+.loading-panel::before {
+  content: '';
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(59, 130, 246, 0.08);
+  border-top: 3px solid var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsiveness adjustments */
@@ -1293,5 +1317,77 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb {
 
 html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="light"] .loading-panel::before {
+  border: 3px solid rgba(15, 23, 42, 0.06);
+  border-top: 3px solid #2563eb;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.15);
+}
+
+/* Cart Loader Animation */
+.cart-loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  gap: 1.5rem;
+}
+
+.cart-animation-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.moving-cart {
+  color: var(--accent-blue);
+  animation: moveCart 2s infinite ease-in-out;
+  filter: drop-shadow(var(--glow-blue));
+}
+
+.falling-item {
+  position: absolute;
+  top: 0;
+  color: var(--accent-purple);
+  animation: dropItem 2s infinite ease-in;
+  filter: drop-shadow(var(--glow-purple));
+  z-index: 1; /* Keep it above the cart so it looks like it drops into it */
+}
+
+.loader-text {
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  animation: pulseText 2s infinite ease-in-out;
+}
+
+@keyframes moveCart {
+  0% { transform: translateX(-20px); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(-20px); }
+}
+
+@keyframes dropItem {
+  0% { transform: translateY(-20px) scale(0.5) rotate(-20deg); opacity: 0; }
+  20% { transform: translateY(-10px) scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(20px) scale(0.8) rotate(20deg); opacity: 0; }
+  100% { transform: translateY(20px) scale(0.5); opacity: 0; }
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+html[data-theme="light"] .moving-cart {
+  filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.25));
+}
+html[data-theme="light"] .falling-item {
+  filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.25));
 }
 
