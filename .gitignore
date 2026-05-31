@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.venv/
+*.db
+frontend/node_modules/
+frontend/dist/
+frontend-qa-*.png
+Technical Assessment (Software Engineer).pdf
+checkpoint.md
