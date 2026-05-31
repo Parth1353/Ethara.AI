@@ -27,9 +27,9 @@ function AppLayout() {
 
       <aside className={`sidebar ${open ? 'open' : ''}`}>
         <div className="brand">
-          <div className="brand-mark">IO</div>
+          <div className="brand-mark">EA</div>
           <div>
-            <p className="brand-title">InventoryOps</p>
+            <p className="brand-title">Ethara.AI</p>
             <p className="brand-subtitle">Management System</p>
           </div>
         </div>
@@ -65,7 +65,7 @@ function AppLayout() {
           >
             <Menu size={20} aria-hidden="true" />
           </button>
-          <span>InventoryOps</span>
+          <span>Ethara.AI</span>
           <span className="mobile-spacer" aria-hidden="true" />
         </header>
 

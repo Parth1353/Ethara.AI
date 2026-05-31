@@ -4,7 +4,7 @@ Fill these in after the account-bound deployment steps are complete.
 
 | Requirement | Link |
 | --- | --- |
-| GitHub repository | TODO |
+| GitHub repository | https://github.com/Parth1353/Ethara.AI |
 | Docker Hub backend image | TODO |
 | Live frontend deployment | TODO |
 | Live backend API | TODO |

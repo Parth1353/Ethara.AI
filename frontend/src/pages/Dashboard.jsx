@@ -77,7 +77,7 @@ function Dashboard() {
           <div className="panel-heading">
             <div>
               <h2>Recent orders</h2>
-              <p>{formatCurrency(revenue)} recorded in mock data</p>
+              <p>{formatCurrency(revenue)} recorded revenue</p>
             </div>
           </div>
 

@@ -35,6 +35,10 @@ Ethara.AI is a production-ready Inventory and Order Management System built for 
 │   ├── alembic
 │   ├── tests
 │   └── Dockerfile
+├── docs
+│   ├── ASSESSMENT-CHECKLIST.md
+│   ├── DEPLOYMENT.md
+│   └── SUBMISSION.md
 ├── frontend
 │   ├── src
 │   ├── public
@@ -43,8 +47,6 @@ Ethara.AI is a production-ready Inventory and Order Management System built for 
 │   └── netlify.toml
 ├── docker-compose.yml
 ├── render.yaml
-├── DEPLOYMENT.md
-├── SUBMISSION.md
 └── scripts
 ```
 
@@ -158,7 +160,7 @@ Recommended free deployment path:
 - Frontend fallback: Netlify
 - Backend image registry: Docker Hub
 
-See `DEPLOYMENT.md` for exact deployment steps and required environment variables.
+See `docs/DEPLOYMENT.md` for exact deployment steps and required environment variables.
 
 ## Submission Checklist
 
@@ -167,4 +169,6 @@ See `DEPLOYMENT.md` for exact deployment steps and required environment variable
 - Live frontend deployment URL
 - Live backend API URL
 
-Fill `SUBMISSION.md` after deployment.
+Fill `docs/SUBMISSION.md` after deployment.
+
+The PDF requirement mapping is documented in `docs/ASSESSMENT-CHECKLIST.md`.

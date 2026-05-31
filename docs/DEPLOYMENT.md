@@ -8,10 +8,10 @@ Create an empty GitHub repository, then connect and push this local repo:
 
 ```bash
 git remote add origin <github-repo-url>
-git push -u origin master
+git push -u origin main
 ```
 
-Use the GitHub repository URL in `SUBMISSION.md`.
+Use the GitHub repository URL in `docs/SUBMISSION.md`.
 
 ## 2. Docker Hub Backend Image
 
@@ -23,7 +23,7 @@ docker tag inventory-backend:local <dockerhub-username>/inventory-backend:latest
 docker push <dockerhub-username>/inventory-backend:latest
 ```
 
-Use the pushed image URL in `SUBMISSION.md`.
+Use the pushed image URL in `docs/SUBMISSION.md`.
 
 ## 3. Neon PostgreSQL
 
@@ -104,7 +104,7 @@ VITE_API_BASE_URL=https://<render-service>.onrender.com
 
 ## 7. Final Submission Checklist
 
-Update `SUBMISSION.md` with:
+Update `docs/SUBMISSION.md` with:
 
 - GitHub repository link
 - Docker Hub backend image link
